@@ -1,0 +1,47 @@
+{
+  "id": "698806aa-0838-832f-a3a4-3c4080220e45",
+  "appdata": {
+    "name": "kyrnex",
+    "subname": "kyrnex_home",
+    "description": "Local desktop platform for running modular web applications.",
+    "version": "0.1.0",
+    "type": "web",
+    "entry": "src/index.js"
+  },
+
+  "webview": {
+    "preload": "src/preload.js",
+    "webPreferences": {
+      "nodeIntegration": false,
+      "contextIsolation": true
+    }
+  },
+
+  "server": {
+    "enabled": true,
+    "name": "kyrnex",
+    "host": "localhost",
+    "port": 3000,
+    "protocol": "http",
+    "pathViews": "src/views",
+    "pathPublic": "src/public",
+    "watchFile": true
+  },
+
+  "author": {
+    "name": "Kyrn",
+    "organization": "KyrnCode",
+    "website": "",
+    "repository": ""
+  },
+
+  "lifecycle": {
+    "createdAt": "2026-02-12",
+    "updatedAt": "2026-02-12"
+  },
+
+  "permissions": {
+    "system": ["fs"],
+    "network": ["net"]
+  }
+}

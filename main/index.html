@@ -1,11 +1,457 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h3>Hola Mundo</h3>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <title>Kyrnex</title>
+    <!-- Materialize -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
+      rel="stylesheet"
+    />
+    <link href="materialize/css/materialize.min.css" rel="stylesheet" />
+
+    <!-- Kyrnex -->
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <!-- TOP BAR -->
+      <header class="top-bar" role="banner">
+        <button class="topbar-btn" data-tooltip="Back" aria-label="Back">
+          <span class="bi bi-arrow-left-short sz-2"></span>
+        </button>
+        <button class="topbar-btn" data-tooltip="Forward" aria-label="Forward">
+          <span class="bi bi-arrow-right-short sz-2"></span>
+        </button>
+        <button class="topbar-btn" data-tooltip="Reload" aria-label="Reload">
+          <span class="bi bi-arrow-clockwise"></span>
+        </button>
+
+        <div class="topbar-separator"></div>
+
+        <button
+          class="topbar-btn"
+          data-tooltip="Bookmark"
+          aria-label="Bookmark"
+        >
+          <span class="bi bi-bookmark"></span>
+        </button>
+
+        <div class="url-bar" role="search" aria-label="Address bar">
+          <span class="material-icons-outlined url-bar-icon">link</span>
+          <input
+            type="text"
+            class="url-bar-input browser-default"
+            placeholder="Search or enter a URL"
+            aria-label="Search or enter a URL"
+            autocomplete="off"
+          />
+        </div>
+
+        <div class="topbar-right">
+          <button
+            class="topbar-btn topbar-collapsible collapse-mobile"
+            data-tooltip="AI"
+            data-menu-label="AI"
+            data-menu-icon="auto_awesome"
+            aria-label="AI"
+          >
+            <span class="material-icons-outlined">auto_awesome</span>
+          </button>
+          <button
+            class="topbar-btn topbar-collapsible collapse-mobile"
+            data-tooltip="Screenshot"
+            data-menu-label="Screenshot"
+            data-menu-icon="screenshot_monitor"
+            aria-label="Screenshot"
+          >
+            <span class="material-icons-outlined">screenshot_monitor</span>
+          </button>
+
+          <div
+            class="topbar-separator topbar-collapsible collapse-mobile"
+          ></div>
+
+          <button
+            class="topbar-btn topbar-collapsible collapse-mobile"
+            data-tooltip="Downloads"
+            data-menu-label="Downloads"
+            data-menu-icon="download"
+            aria-label="Downloads"
+          >
+            <span class="material-icons-outlined">download</span>
+          </button>
+          <button
+            class="topbar-btn topbar-collapsible collapse-tablet collapse-mobile"
+            data-tooltip="Media"
+            data-menu-label="Media"
+            data-menu-icon="music_note"
+            aria-label="Media"
+          >
+            <span class="material-icons-outlined">music_note</span>
+          </button>
+          <button
+            class="topbar-btn topbar-collapsible collapse-tablet collapse-mobile"
+            data-tooltip="Devices"
+            data-menu-label="Devices"
+            data-menu-icon="devices"
+            aria-label="Devices"
+          >
+            <span class="material-icons-outlined">devices</span>
+          </button>
+          <button
+            class="topbar-btn topbar-collapsible collapse-tablet collapse-mobile"
+            data-tooltip="Tabs"
+            data-menu-label="Tabs"
+            data-menu-icon="tab"
+            aria-label="Tabs"
+          >
+            <span class="material-icons-outlined">tab</span>
+          </button>
+          <button
+            class="topbar-btn topbar-collapsible collapse-mobile"
+            data-tooltip="Favorites"
+            data-menu-label="Favorites"
+            data-menu-icon="star_border"
+            aria-label="Favorites"
+          >
+            <span class="material-icons-outlined">star_border</span>
+          </button>
+          <button
+            class="topbar-btn topbar-collapsible collapse-mobile"
+            data-tooltip="Privacy"
+            data-menu-label="Privacy"
+            data-menu-icon="shield"
+            aria-label="Privacy"
+          >
+            <span class="material-icons-outlined">shield</span>
+          </button>
+          <button
+            class="topbar-btn"
+            id="menuToggle"
+            data-tooltip="Menu"
+            aria-label="Menu"
+          >
+            <span class="material-icons-outlined">menu</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- BODY: SIDEBAR + CONTENT -->
+      <div class="app-body">
+        <!-- SIDEBAR -->
+        <nav class="app-sidebar" role="navigation" aria-label="Main sidebar">
+          <div class="sidebar-top">
+            <button
+              class="sidebar-btn active"
+              data-tooltip="Apps"
+              aria-label="Apps"
+            >
+              <span class="bi bi-grid-fill"></span>
+            </button>
+            <!-- <button class="sidebar-btn" data-tooltip="New tab" aria-label="New tab">
+            <span class="material-icons-outlined">add</span>
+          </button> -->
+            <button
+              class="sidebar-btn"
+              data-tooltip="Infomation"
+              aria-label="Infomation"
+            >
+              <span class="bi bi-info-circle-fill"></span>
+            </button>
+            <button
+              class="sidebar-btn"
+              data-tooltip="Archived"
+              aria-label="Archived"
+            >
+              <span class="bi bi-archive-fill"></span>
+            </button>
+            <button
+              class="sidebar-btn"
+              data-tooltip="Download"
+              aria-label="Download"
+            >
+              <span class="bi bi-cloud-download-fill"></span>
+            </button>
+          </div>
+
+          <div class="sidebar-bottom">
+            <button
+              class="sidebar-btn"
+              id="themeToggle"
+              data-tooltip="Toggle theme"
+              aria-label="Toggle theme"
+            >
+              <span class="bi bi-moon theme-icon-moon"></span>
+              <span class="bi bi-brightness-high theme-icon-sun"></span>
+            </button>
+            <button
+              class="sidebar-avatar"
+              data-tooltip="Profile"
+              aria-label="Profile"
+            >
+              L
+            </button>
+          </div>
+        </nav>
+
+        <!-- CONTENT AREA -->
+        <main class="content-area" role="main">
+          <div class="load-webview" id="load-webview"></div>
+          <!-- <div class="content-placeholder">
+          <span class="bi bi-arrow-repeat"></span>
+          <p>Loading...</p>
+        </div> -->
+        </main>
+      </div>
+    </div>
+
+    <!-- TOOLTIP -->
+    <div
+      class="custom-tooltip"
+      id="tooltip"
+      role="tooltip"
+      aria-hidden="true"
+    ></div>
+
+    <!-- MENU OVERLAY -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- OVERFLOW MENU -->
+    <nav
+      class="overflow-menu"
+      id="overflowMenu"
+      role="menu"
+      aria-label="More options"
+    ></nav>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+      (function () {
+        /* ===== THEME ===== */
+        var root = document.documentElement;
+        var themeBtn = document.getElementById("themeToggle");
+        var saved = localStorage.getItem("theme") || "light";
+
+        function applyTheme(t) {
+          if (t === "dark") {
+            root.setAttribute("data-theme", "dark");
+          } else {
+            root.removeAttribute("data-theme");
+          }
+          localStorage.setItem("theme", t);
+        }
+        applyTheme(saved);
+
+        themeBtn.addEventListener("click", function () {
+          applyTheme(root.hasAttribute("data-theme") ? "light" : "dark");
+        });
+
+        /* ===== SIDEBAR ACTIVE STATE ===== */
+        var sidebarBtns = document.querySelectorAll(
+          ".sidebar-top .sidebar-btn",
+        );
+        sidebarBtns.forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            sidebarBtns.forEach(function (b) {
+              b.classList.remove("active");
+            });
+            btn.classList.add("active");
+          });
+        });
+
+        /* ===== TOOLTIPS ===== */
+        var tooltipEl = document.getElementById("tooltip");
+        var hideTimer = null;
+        var GAP = 8;
+        var PAD = 8;
+
+        function positionTooltip(trigger) {
+          clearTimeout(hideTimer);
+          var text = trigger.getAttribute("data-tooltip");
+          if (!text) return;
+
+          tooltipEl.textContent = text;
+
+          /* Reset so we can measure */
+          tooltipEl.style.left = "0px";
+          tooltipEl.style.top = "0px";
+          tooltipEl.classList.add("visible");
+
+          var r = trigger.getBoundingClientRect();
+          var tw = tooltipEl.offsetWidth;
+          var th = tooltipEl.offsetHeight;
+          var vw = window.innerWidth;
+          var vh = window.innerHeight;
+          var isSidebar = !!trigger.closest(".app-sidebar");
+          var isMobileBar = isSidebar && window.innerWidth <= 480;
+          var left, top;
+
+          if (isSidebar && !isMobileBar) {
+            /* Right of sidebar button */
+            left = r.right + GAP;
+            top = r.top + (r.height - th) / 2;
+          } else if (isMobileBar) {
+            /* Above the bottom bar */
+            left = r.left + (r.width - tw) / 2;
+            top = r.top - th - GAP;
+          } else {
+            /* Below the top bar */
+            left = r.left + (r.width - tw) / 2;
+            top = r.bottom + GAP;
+          }
+
+          /* Clamp to viewport */
+          if (left < PAD) left = PAD;
+          if (left + tw > vw - PAD) left = vw - tw - PAD;
+          if (top < PAD) top = PAD;
+          if (top + th > vh - PAD) top = vh - th - PAD;
+
+          tooltipEl.style.left = Math.round(left) + "px";
+          tooltipEl.style.top = Math.round(top) + "px";
+        }
+
+        function hideTooltip() {
+          hideTimer = setTimeout(function () {
+            tooltipEl.classList.remove("visible");
+          }, 80);
+        }
+
+        document.querySelectorAll("[data-tooltip]").forEach(function (el) {
+          el.addEventListener("mouseenter", function () {
+            positionTooltip(el);
+          });
+          el.addEventListener("mouseleave", hideTooltip);
+          el.addEventListener("focus", function () {
+            positionTooltip(el);
+          });
+          el.addEventListener("blur", hideTooltip);
+          /* Hide tooltip on touch to avoid stuck tooltips */
+          el.addEventListener(
+            "touchstart",
+            function () {
+              hideTooltip();
+            },
+            { passive: true },
+          );
+        });
+
+        /* ===== OVERFLOW MENU ===== */
+        var menuBtn = document.getElementById("menuToggle");
+        var menu = document.getElementById("overflowMenu");
+        var overlay = document.getElementById("menuOverlay");
+        var menuOpen = false;
+
+        /* Detect which collapsible buttons are currently hidden via CSS */
+        function getHiddenItems() {
+          var items = [];
+          var collapsibles = document.querySelectorAll(
+            ".topbar-collapsible[data-menu-label]",
+          );
+          collapsibles.forEach(function (btn) {
+            var style = window.getComputedStyle(btn);
+            if (style.display === "none") {
+              items.push({
+                label: btn.getAttribute("data-menu-label"),
+                icon: btn.getAttribute("data-menu-icon"),
+              });
+            }
+          });
+          return items;
+        }
+
+        function buildMenu() {
+          var hidden = getHiddenItems();
+          var html = "";
+
+          /* Settings always shown */
+          html += '<button class="overflow-menu-item" role="menuitem">';
+          html += '<span class="material-icons-outlined">settings</span>';
+          html += "<span>Settings</span>";
+          html += "</button>";
+
+          /* Hidden toolbar items */
+          if (hidden.length > 0) {
+            html += '<div class="overflow-menu-divider"></div>';
+            for (var i = 0; i < hidden.length; i++) {
+              html += '<button class="overflow-menu-item" role="menuitem">';
+              html +=
+                '<span class="material-icons-outlined">' +
+                hidden[i].icon +
+                "</span>";
+              html += "<span>" + hidden[i].label + "</span>";
+              html += "</button>";
+            }
+          }
+
+          /* Always show Help and About */
+          html += '<div class="overflow-menu-divider"></div>';
+          html += '<button class="overflow-menu-item" role="menuitem">';
+          html += '<span class="material-icons-outlined">help_outline</span>';
+          html += "<span>Help</span>";
+          html += "</button>";
+          html += '<button class="overflow-menu-item" role="menuitem">';
+          html += '<span class="material-icons-outlined">info</span>';
+          html += "<span>About</span>";
+          html += "</button>";
+
+          menu.innerHTML = html;
+        }
+
+        function openMenu() {
+          buildMenu();
+          menuOpen = true;
+          menu.classList.add("open");
+          overlay.classList.add("open");
+          tooltipEl.classList.remove("visible");
+        }
+
+        function closeMenu() {
+          menuOpen = false;
+          menu.classList.remove("open");
+          overlay.classList.remove("open");
+        }
+
+        function toggleMenu(e) {
+          e.stopPropagation();
+          if (menuOpen) {
+            closeMenu();
+          } else {
+            openMenu();
+          }
+        }
+
+        menuBtn.addEventListener("click", toggleMenu);
+
+        overlay.addEventListener("click", function () {
+          closeMenu();
+        });
+
+        menu.addEventListener("click", function (e) {
+          if (e.target.closest(".overflow-menu-item")) {
+            closeMenu();
+          }
+        });
+
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && menuOpen) {
+            closeMenu();
+          }
+        });
+
+        /* Rebuild menu content on resize in case hidden items changed */
+        var resizeTimer;
+        window.addEventListener("resize", function () {
+          clearTimeout(resizeTimer);
+          resizeTimer = setTimeout(function () {
+            if (menuOpen) buildMenu();
+          }, 100);
+        });
+      })();
+    </script>
+  </body>
 </html>

@@ -1,8 +1,7 @@
-import { app } from "electron";
 import path from "path";
 
 // Librerias (Kyrn)
-import { windowController } from "../modules/window-controller/windowController.mjs";
+import { windowController } from "../modules/windowController/windowController.mjs";
 import pathUtils from "../modules/utils/pathUtils.mjs";
 
 const { __dirname, __filename } = pathUtils.getFileDetails(import.meta.url);
@@ -16,12 +15,13 @@ windowController.whenReady(async () => {
 
     // Eventos personalizados
     onEvent: (event, win, id) => {
-      console.log(`Evento ${event} en ventana ${id}`);
+      // console.log(`Evento ${event} en ventana ${id}`);
     },
 
     // Todas las opciones de BrowserWindow
     webPreferences: {
       preload: path.join(__dirname, "preload.mjs"),
+      nodeIntegration: true
     },
   });
 
