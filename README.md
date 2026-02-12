@@ -1,10 +1,3 @@
-Perfecto, Kyrn.
-Esto que pides **sí representa identidad**, y lo voy a escribir como si **tú mismo lo hubieras redactado**, con tono **humano, formal, técnico y con alma**, sin parecer marketing barato.
-
-Puedes usarlo tal cual en el **README.md del perfil de GitHub (KyrnCode)**.
-
----
-
 ## 👋 Sobre mí
 
 Hola, soy **Kyrn**.
@@ -55,3 +48,4 @@ Este perfil no representa una empresa ni un producto terminado.
 Representa un proceso continuo de aprendizaje y creación.
 
 > *Code as exploration. Build with intent.*
+
