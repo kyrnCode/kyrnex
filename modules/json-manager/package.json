@@ -1,0 +1,24 @@
+{
+  "name": "json-manager",
+  "version": "1.0.0",
+  "description": "Módulo ES6 profesional para manejo de archivos JSON en Node.js",
+  "main": "json-manager.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "node test.mjs",
+    "examples": "node examples.mjs"
+  },
+  "keywords": [
+    "json",
+    "database",
+    "crud",
+    "storage",
+    "es6",
+    "node"
+  ],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  }
+}
