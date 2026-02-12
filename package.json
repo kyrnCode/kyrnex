@@ -1,0 +1,32 @@
+{
+  "name": "kyrnex",
+  "version": "1.0.0",
+  "description": "Local desktop platform for running modular web applications.",
+  "main": "./main/kyrnex.mjs",
+  "scripts": {
+    "start": "electron ./"
+  },
+  "keywords": [
+    "electron",
+    "nodejs",
+    "desktop",
+    "local-apps",
+    "modular",
+    "platform",
+    "app-core",
+    "webview",
+    "self-hosted",
+    "offline"
+  ],
+  "author": "Kyrn",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "ejs": "^4.0.1",
+    "express": "^5.2.1",
+    "uuid": "^13.0.0"
+  },
+  "devDependencies": {
+    "electron": "^40.2.1"
+  }
+}
